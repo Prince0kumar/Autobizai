@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Processing - AutoBizAI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #001122 50%, #1a1a2e 100%);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .processing-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .processing-card h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .processing-card p {
+            font-size: 1rem;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+        .progress-container {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            animation: progress 6s linear forwards;
+        }
+        @keyframes progress {
+            to {
+                width: 100%;
+            }
+        }
+        .changing-text {
+            font-size: 1.2rem;
+            font-weight: 500;
+            min-height: 30px;
+        }
+        @media (max-width: 480px) {
+            .processing-card {
+                padding: 30px 20px;
+            }
+            .processing-card h2 {
+                font-size: 1.8rem;
+            }
+            .changing-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="processing-card">
+        <h2>Building Your Personal AI Assistant…</h2>
+        <p>Analyzing your business data and creating your automation system.</p>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="changing-text" id="changingText">Analyzing business model…</div>
+    </div>
+
+    <script>
+        const texts = [
+            "Analyzing business model…",
+            "Training automation brain…",
+            "Connecting communication channels…",
+            "Finalizing setup…"
+        ];
+        const changingText = document.getElementById('changingText');
+        let index = 0;
+
+        // Change text every 1.5 seconds (6 seconds / 4 texts)
+        const textInterval = setInterval(() => {
+            index = (index + 1) % texts.length;
+            changingText.textContent = texts[index];
+        }, 1500);
+
+        // Redirect after 6 seconds
+        setTimeout(() => {
+            clearInterval(textInterval);
+            window.location.href = 'dashboard.html';
+        }, 6000);
+    </script>
+</body>
+</html>

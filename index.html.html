@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoBizAI - Your Personal AI Business Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #001122 0%, #4B0082 50%, #DDA0DD 100%);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        .hero .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .how-it-works {
+            padding: 80px 0;
+        }
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+        .step .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .step p {
+            opacity: 0.8;
+        }
+        .features {
+            padding: 80px 0;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .features .trust {
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 60px;
+            opacity: 0.8;
+        }
+        .feature-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature-card {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            opacity: 0.8;
+        }
+        .pricing {
+            padding: 80px 0;
+            id: pricing;
+        }
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+        .pricing-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .pricing-card {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .pricing-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .pricing-card p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .hero .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .steps, .feature-cards, .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero fade-in">
+        <div class="container">
+            <h1>AutoBizAI – Your Personal AI Business Assistant</h1>
+            <p>Automate customer chats, capture leads, and run daily business tasks with AI — 24/7.</p>
+            <div class="buttons">
+                <a href="signup.html" class="btn">Start Free Setup</a>
+                <a href="#pricing" class="btn">View Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works fade-in">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step glass-card">
+                    <div class="icon">📝</div>
+                    <h3>Step 1: Tell us about your business</h3>
+                    <p>Provide details about your industry, services, and goals. Our AI learns your unique needs to create a tailored assistant.</p>
+                </div>
+                <div class="step glass-card">
+                    <div class="icon">🤖</div>
+                    <h3>Step 2: AI builds your assistant automatically</h3>
+                    <p>Using advanced algorithms, AutoBizAI generates a custom AI model trained on your business data for seamless integration.</p>
+                </div>
+                <div class="step glass-card">
+                    <div class="icon">🚀</div>
+                    <h3>Step 3: Go live and let AI handle customers 24/7</h3>
+                    <p>Deploy your assistant instantly. It manages chats, captures leads, and automates tasks while you focus on growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features fade-in">
+        <div class="container">
+            <h2>Features</h2>
+            <p class="trust">Trusted by modern businesses to save time and increase revenue.</p>
+            <div class="feature-cards">
+                <div class="feature-card glass-card">
+                    <h3>24/7 AI Customer Support</h3>
+                    <p>Provide instant responses to customer inquiries around the clock, ensuring no lead is missed.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <h3>Instant Lead Capture</h3>
+                    <p>Automatically collect and organize leads from chats, emails, and forms for easy follow-up.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <h3>Smart Daily Automation</h3>
+                    <p>Handle routine tasks like scheduling, reminders, and data entry with intelligent AI workflows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing fade-in" id="pricing">
+        <div class="container">
+            <h2>Pricing</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card glass-card">
+                    <h3>Starter</h3>
+                    <div class="price">$9/month</div>
+                    <p>Perfect for small businesses starting with AI automation. Includes basic chat support and lead capture.</p>
+                    <a href="signup.html" class="btn">Start Free Trial</a>
+                </div>
+                <div class="pricing-card glass-card">
+                    <h3>Pro</h3>
+                    <div class="price">$29/month</div>
+                    <p>Ideal for growing teams. Adds advanced automation, custom integrations, and priority support.</p>
+                    <a href="signup.html" class="btn">Start Free Trial</a>
+                </div>
+                <div class="pricing-card glass-card">
+                    <h3>Business</h3>
+                    <div class="price">$79/month</div>
+                    <p>For enterprises needing full-scale AI solutions. Includes unlimited usage, dedicated account manager, and API access.</p>
+                    <a href="signup.html" class="btn">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>AutoBizAI – AI Automation for modern businesses.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Minimal JS for fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
