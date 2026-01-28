@@ -1,162 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Setup - AutoBizAI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #001122 0%, #4B0082 50%, #DDA0DD 100%);
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        .setup-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
-            width: 100%;
-            animation: fadeIn 1s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .setup-card h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-weight: 600;
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            font-size: 1rem;
-            outline: none;
-        }
-        .form-group input::placeholder,
-        .form-group select {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .schedule-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        .schedule-row input {
-            flex: 1;
-        }
-        .btn {
-            display: inline-block;
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            text-decoration: none;
-            border: none;
-            border-radius: 25px;
-            font-weight: 500;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-        .note {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            opacity: 0.8;
-            text-align: center;
-        }
-        @media (max-width: 480px) {
-            .setup-card {
-                padding: 30px 20px;
-            }
-            .setup-card h2 {
-                font-size: 1.8rem;
-            }
-            .schedule-row {
-                flex-direction: column;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="setup-card">
-        <h2>Set Up Your Business</h2>
-        <form action="ai-processing.html" method="post">
-            <div class="form-group">
-                <label for="businessName">Business Name</label>
-                <input type="text" id="businessName" name="businessName" placeholder="Enter your business name" required>
-            </div>
-            <div class="form-group">
-                <label for="businessType">Business Type</label>
-                <select id="businessType" name="businessType" required>
-                    <option value="">Select business type</option>
-                    <option value="retail">Retail</option>
-                    <option value="services">Services</option>
-                    <option value="technology">Technology</option>
-                    <option value="healthcare">Healthcare</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="targetCountry">Target Country</label>
-                <select id="targetCountry" name="targetCountry" required>
-                    <option value="">Select target country</option>
-                    <option value="us">United States</option>
-                    <option value="uk">United Kingdom</option>
-                    <option value="ca">Canada</option>
-                    <option value="au">Australia</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Daily AI Schedule</label>
-                <div class="schedule-row">
-                    <input type="time" name="time1" required>
-                    <input type="text" name="task1" placeholder="Task 1" required>
-                </div>
-                <div class="schedule-row">
-                    <input type="time" name="time2" required>
-                    <input type="text" name="task2" placeholder="Task 2" required>
-                </div>
-                <div class="schedule-row">
-                    <input type="time" name="time3" required>
-                    <input type="text" name="task3"
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Setup - AutoBizAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#001122,#4B0082,#DDA0DD);
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+.setup-card{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.2);
+border-radius:15px;
+padding:40px;
+max-width:500px;
+width:100%;
+box-shadow:0 8px 32px rgba(0,
