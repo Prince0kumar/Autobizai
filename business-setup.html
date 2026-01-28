@@ -3,52 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Business Setup</title>
+<title>Business Setup - AutoBizAI</title>
 
 <style>
-body{
+*{
 margin:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#0a0f2c,#3b0f6f,#b06ab3);
-display:flex;
-justify-content:center;
-align-items:center;
+padding:0;
+box-sizing:border-box;
+font-family: "Poppins", sans-serif;
+}
+
+body{
+background: linear-gradient(135deg,#050014,#2b0040,#6a0572,#a4508b);
 height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
 color:white;
+overflow:hidden;
 }
 
 .card{
-background:rgba(255,255,255,0.1);
-padding:30px;
-border-radius:15px;
-width:320px;
-box-shadow:0 0 20px rgba(0,0,0,0.4);
+background: rgba(255,255,255,0.08);
+backdrop-filter: blur(12px);
+padding:35px;
+border-radius:18px;
+width:380px;
+box-shadow:0 0 25px rgba(0,0,0,0.4);
+border:1px solid rgba(255,255,255,0.15);
 }
 
-h2{text-align:center;}
+h2{
+text-align:center;
+margin-bottom:25px;
+font-weight:600;
+}
 
-input,select,button{
+label{
+font-size:14px;
+opacity:0.8;
+}
+
+input, select{
 width:100%;
-margin-top:10px;
-padding:10px;
-border:none;
+padding:12px;
+margin-top:6px;
+margin-bottom:18px;
 border-radius:8px;
+border:none;
+outline:none;
+background:rgba(255,255,255,0.15);
+color:white;
 font-size:14px;
 }
 
-input,select{
-background:rgba(255,255,255,0.2);
+select option{
+background:#1a002b;   /* 🔥 Fix for white dropdown */
 color:white;
 }
 
 button{
-background:#6c5ce7;
+width:100%;
+padding:12px;
+border:none;
+border-radius:25px;
+background:linear-gradient(135deg,#7f00ff,#e100ff);
 color:white;
-font-weight:bold;
+font-weight:600;
+font-size:15px;
 cursor:pointer;
+transition:0.3s;
 }
 
-button:hover{background:#8e7bff;}
+button:hover{
+transform:scale(1.04);
+box-shadow:0 0 15px rgba(225,0,255,0.6);
+}
 </style>
 </head>
 
@@ -57,33 +87,36 @@ button:hover{background:#8e7bff;}
 <div class="card">
 <h2>Business Setup</h2>
 
-<input type="text" placeholder="Business Name" required>
-<select required>
-<option value="">Business Type</option>
+<label>Business Name</label>
+<input type="text" placeholder="Enter your business name">
+
+<label>Business Type</label>
+<select>
+<option value="">Select Business Type</option>
 <option>Retail</option>
 <option>Services</option>
 <option>Technology</option>
+<option>Healthcare</option>
 </select>
 
-<select required>
-<option value="">Target Country</option>
-<option>USA</option>
-<option>UK</option>
+<label>Target Country</label>
+<select>
+<option value="">Select Target Country</option>
+<option>United States</option>
+<option>United Kingdom</option>
 <option>Canada</option>
+<option>Australia</option>
+<option>Germany</option>
 </select>
 
-<input type="time" required>
-<input type="text" placeholder="Task 1" required>
-
-<button onclick="nextPage()">Continue</button>
+<button onclick="goNext()">Continue</button>
 </div>
 
 <script>
-function nextPage(){
+function goNext(){
 window.location.href="ai-processing.html";
 }
 </script>
 
 </body>
 </html>
-
