@@ -3,27 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Business Setup - AutoBizAI</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Business Setup</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
 body{
-font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#001122,#4B0082,#DDA0DD);
-color:#fff;
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#0a0f2c,#3b0f6f,#b06ab3);
 display:flex;
 justify-content:center;
 align-items:center;
-min-height:100vh;
+height:100vh;
+color:white;
 }
 
-.setup-card{
+.card{
 background:rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,0.2);
+padding:30px;
 border-radius:15px;
-padding:40px;
-max-width:500px;
+width:320px;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+h2{text-align:center;}
+
+input,select,button{
 width:100%;
-box-shadow:0 8px 32px rgba(0,
+margin-top:10px;
+padding:10px;
+border:none;
+border-radius:8px;
+font-size:14px;
+}
+
+input,select{
+background:rgba(255,255,255,0.2);
+color:white;
+}
+
+button{
+background:#6c5ce7;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{background:#8e7bff;}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>Business Setup</h2>
+
+<input type="text" placeholder="Business Name" required>
+<select required>
+<option value="">Business Type</option>
+<option>Retail</option>
+<option>Services</option>
+<option>Technology</option>
+</select>
+
+<select required>
+<option value="">Target Country</option>
+<option>USA</option>
+<option>UK</option>
+<option>Canada</option>
+</select>
+
+<input type="time" required>
+<input type="text" placeholder="Task 1" required>
+
+<button onclick="nextPage()">Continue</button>
+</div>
+
+<script>
+function nextPage(){
+window.location.href="ai-processing.html";
+}
+</script>
+
+</body>
+</html>
+
